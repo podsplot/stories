@@ -9,7 +9,8 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% seo %}
-
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+	
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
@@ -204,32 +205,33 @@ ga('send', 'pageview');
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 {% endif %}
 
-	<!-- Si aún no lo tienes, en el <head> incluye el CSS de Cookie Consent -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-
-<!-- Resto del contenido del layout... -->
-
-<!-- Justo antes de cerrar la etiqueta </body>, añade lo siguiente -->
+<!-- Justo antes de cerrar la etiqueta </body> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 <script>
   window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#000"
+    console.log("Iniciando Cookie Consent");
+    if(window.cookieconsent) {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#000"
+          },
+          "button": {
+            "background": "#f1d600"
+          }
         },
-        "button": {
-          "background": "#f1d600"
+        "theme": "classic",
+        "content": {
+          "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
+          "dismiss": "Entendido",
+          "link": "Más información",
+          "href": "/politica-de-cookies"  // Ajusta la URL según corresponda
         }
-      },
-      "theme": "classic",
-      "content": {
-        "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
-        "dismiss": "Entendido",
-        "link": "Más información",
-        "href": "/politica-de-cookies"  // Ajusta esta URL a la ruta de tu política de cookies
-      }
-    });
+      });
+      console.log("Cookie Consent inicializado");
+    } else {
+      console.error("cookieconsent no está disponible");
+    }
   });
 </script>
 </body>
