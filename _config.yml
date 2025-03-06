@@ -14,13 +14,13 @@ permalink: /:title/
 # Authors
 authors:
   sal:
-    name: Sal
-    display_name: Sal
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
+    name: Pod
+    display_name: Pod
+    gravatar: firewise28a5f92644
+    email: podsplot@gmail.com
+    web: https://www.podsplot.com
+    twitter: https://twitter.com/
+    description: "Autor de Podsplot"
   john:
     name: John
     display_name: John    
