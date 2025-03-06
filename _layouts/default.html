@@ -204,5 +204,34 @@ ga('send', 'pageview');
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 {% endif %}
 
+	<!-- Si aún no lo tienes, en el <head> incluye el CSS de Cookie Consent -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+
+<!-- Resto del contenido del layout... -->
+
+<!-- Justo antes de cerrar la etiqueta </body>, añade lo siguiente -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#000"
+        },
+        "button": {
+          "background": "#f1d600"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
+        "dismiss": "Entendido",
+        "link": "Más información",
+        "href": "/politica-de-cookies"  // Ajusta esta URL a la ruta de tu política de cookies
+      }
+    });
+  });
+</script>
 </body>
+
 </html>
