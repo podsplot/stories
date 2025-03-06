@@ -9,7 +9,9 @@
 <title>{{ page.title }} | {{site.name}}</title>
 
 {% seo %}
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+
 	
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
@@ -208,9 +210,8 @@ ga('send', 'pageview');
 <!-- Justo antes de cerrar la etiqueta </body> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 <script>
-  window.addEventListener("load", function(){
-    console.log("Iniciando Cookie Consent");
-    if(window.cookieconsent) {
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.cookieconsent) {
       window.cookieconsent.initialise({
         "palette": {
           "popup": {
@@ -225,15 +226,15 @@ ga('send', 'pageview');
           "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
           "dismiss": "Entendido",
           "link": "Más información",
-          "href": "/politica-de-cookies"  // Ajusta la URL según corresponda
+          "href": "/politica-de-cookies"  // Asegúrate de que esta URL es correcta para tu política de cookies
         }
       });
-      console.log("Cookie Consent inicializado");
     } else {
-      console.error("cookieconsent no está disponible");
+      console.error("CookieConsent no está disponible.");
     }
   });
 </script>
+
 </body>
 
 </html>
