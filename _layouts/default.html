@@ -19,6 +19,7 @@
   <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 
   <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+  
 </head>
 
 {% if jekyll.environment == 'production' %}
@@ -192,6 +193,8 @@
   {% if page.layout == 'post' %}
   <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
   {% endif %}
-  {% include footer.html %}
+  
+  <script src="{{ site.baseurl }}/assets/js/cookie-consent.js"></script>
+  
 </body>
 </html>
