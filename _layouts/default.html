@@ -40,30 +40,6 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </noscript>
-
-  <!-- Coloca este bloque antes de </body> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script>
-    window.addEventListener("load", function() {
-      window.cookieconsent.initialise({
-        "palette": {
-          "popup": {
-            "background": "#000"
-          },
-          "button": {
-            "background": "#f1d600"
-          }
-        },
-        "theme": "classic",
-        "content": {
-          "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
-          "dismiss": "Entendido",
-          "link": "Más información",
-          "href": "/politica-de-cookies"  // Cambia esta ruta a la ubicación de tu política de cookies
-        }
-      });
-    });
-  </script>
   
   <!-- Begin Menu Navigation
   ================================================== -->
@@ -118,7 +94,7 @@
   </nav>
   <!-- End Navigation
   ================================================== -->
-
+  
   <div class="site-content">
     <div class="container">
       <!-- Site Title
@@ -216,6 +192,6 @@
   {% if page.layout == 'post' %}
   <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
   {% endif %}
-
+  {% include footer.html %}
 </body>
 </html>
