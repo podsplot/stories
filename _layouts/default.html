@@ -41,6 +41,30 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   </noscript>
 
+  <!-- Coloca este bloque antes de </body> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#000"
+          },
+          "button": {
+            "background": "#f1d600"
+          }
+        },
+        "theme": "classic",
+        "content": {
+          "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
+          "dismiss": "Entendido",
+          "link": "Más información",
+          "href": "/politica-de-cookies"  // Cambia esta ruta a la ubicación de tu política de cookies
+        }
+      });
+    });
+  </script>
+  
   <!-- Begin Menu Navigation
   ================================================== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
@@ -192,34 +216,6 @@
   {% if page.layout == 'post' %}
   <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
   {% endif %}
-
-  <!-- Script para Cookie Consent: -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script>
-    window.addEventListener("load", function() {
-      if (window.cookieconsent) {
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#000"
-            },
-            "button": {
-              "background": "#f1d600"
-            }
-          },
-          "theme": "classic",
-          "content": {
-            "message": "Este sitio utiliza cookies para asegurar que obtengas la mejor experiencia.",
-            "dismiss": "Entendido",
-            "link": "Más información",
-            "href": "/politica-de-cookies"  // Asegúrate de que esta URL sea la correcta para tu política de cookies
-          }
-        });
-      } else {
-        console.error("CookieConsent no está disponible.");
-      }
-    });
-  </script>
 
 </body>
 </html>
